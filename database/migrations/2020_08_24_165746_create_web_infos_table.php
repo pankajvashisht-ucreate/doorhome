@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class User extends Migration
+class CreateWebInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class User extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('web_infos', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 126);
+            $table->string('value', 255);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class User extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('web_infos');
     }
 }

@@ -22,7 +22,7 @@ class CreateUserAddressesTable extends Migration
             $table->string('city', 128);
             $table->string('state', 128);
             $table->string('postCode', 20);
-            $table->bool('isDefault')->default(false);
+            $table->boolean('isDefault')->default(false);
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ class ProductImages extends Migration
      */
     public function up()
     {
-        Schema::table('product_images', function (Blueprint $table) {
+        Schema::create('product_images', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('product_id');
             $table->string('image', 128)->default('');
@@ -29,8 +29,6 @@ class ProductImages extends Migration
      */
     public function down()
     {
-        Schema::table('product_images', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('product_images');
     }
 }

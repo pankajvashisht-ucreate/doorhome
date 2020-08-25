@@ -17,14 +17,14 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('product_id');
-            $table->integer('totalQty')->default(1);
+            $table->integer('totalQty')->unsigned(1);
             $table->float('totalPrice', 8, 2)->default(0);
             $table->integer('category_id');
             $table->json('productDetails');
             $table->json('addressDetails');
             $table->json('paymentDetails');
-            $table->integer('status', 2)->default(0);
-            $table->integer('paymentStatus', 2)->default(0);
+            $table->integer('status')->length(2)->unsigned(0);
+            $table->integer('paymentStatus')->length(2)->unsigned(0);
             $table->timestamps();
         });
     }

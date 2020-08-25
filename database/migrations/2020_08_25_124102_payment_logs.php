@@ -17,7 +17,7 @@ class PaymentLogs extends Migration
             $table->id();
             $table->bigInteger('product_id');
             $table->json('paymentDetails');
-            $table->integer('status', 2)->default(1);
+            $table->integer('status')->length(2)->default(1);
             $table->timestamps();
         });
     }
